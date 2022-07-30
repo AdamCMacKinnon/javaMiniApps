@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.Random;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class Main {
             Random random = new Random();
             int y = random.nextInt(500);
             String header = "Daily Report " + y + " FOR TESTING:\n";
+            String footer = "\nConclusion of Daily Report.  Processing Date: " + LocalDate.now();
             System.out.println("Writing Files!");
             File myFile = new File("newFile.txt");
             if (myFile.exists()) {
@@ -27,6 +29,8 @@ public class Main {
                 writeFile.write(fileContent + y + "\n");
                 x++;
             }
+            writeFile.write("\n-----------------------------\n");
+            writeFile.write(footer);
             writeFile.close();
         } catch (Exception e) {
             e.printStackTrace();
