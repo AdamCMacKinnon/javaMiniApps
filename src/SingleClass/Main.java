@@ -1,4 +1,4 @@
-package ReadWriteFiles;
+package SingleClass;
 
 import java.io.File;
 import java.io.FileWriter;
